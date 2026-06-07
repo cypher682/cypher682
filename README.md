@@ -1,4 +1,4 @@
-<h1 align="center">Cypher — Cloud Infrastructure & Security Engineer</h1>
+<h1 align="center">Cypher — Cloud Infrastructure & Devops Engineer</h1>
 
 <p align="center">
   Designing and operating production-grade AWS systems with a focus on security, reliability, and cost efficiency.
