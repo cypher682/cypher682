@@ -1,13 +1,19 @@
-<h1 align="center">Cypher — Cloud Infrastructure & Devops Engineer</h1>
+# Cypher — Cloud Infrastructure & DevOps Engineer
 
 <p align="center">
-  Designing and operating production-grade AWS systems with a focus on security, reliability, and cost efficiency.
+  Designing and operating production-grade AWS and Kubernetes systems with a focus on security, reliability, and cost efficiency.
 </p>
 
 <p align="center">
-  <a href="https://github.com/cypher682"><img src="https://img.shields.io/badge/GitHub-cypher682-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-  <a href="https://linkedin.com/in/suleiman-abdulrahman-dev"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-  <a href="mailto:suleiman.abdulrahman.dev@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+  <a href="https://github.com/cypher682">
+    <img src="https://img.shields.io/badge/GitHub-cypher682-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="https://linkedin.com/in/suleiman-abdulrahman-dev">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="mailto:suleiman.abdulrahman.dev@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
 </p>
 
 ---
@@ -15,112 +21,187 @@
 ## Focus
 
 - **AWS Infrastructure** — VPC, ECS, RDS, IAM, Terraform
-- **Cloud Security** — IAM hardening, CIS-aligned auditing, GuardDuty
+- **Cloud Security** — IAM hardening, CIS-aligned auditing, event-driven detection (GuardDuty, EventBridge, Lambda)
 - **CI/CD & Platform Engineering** — GitHub Actions, blue-green deployments, automation
+- **Observability** — Prometheus, Grafana, incident debugging (CrashLoopBackOff, ServiceMonitor)
+- **Backend Engineering** — FastAPI, Node.js, multi-tenant authentication systems, production APIs
 - **Linux Systems** — `/proc` internals, network namespaces, systemd, debugging
 
 ---
 
-## Projects
+# Featured Projects
 
-### 🔹 [ECS Production Platform](https://github.com/cypher682/ecs-production-platform)
-Production-grade AWS container platform with blue-green deployment and rollback capability.
+## 🔹 authcore-service
+**Multi-tenant authentication service** with JWT-based authentication, RBAC, and audit logging.
 
-- 36+ Terraform-managed resources: VPC, ALB, ECS Fargate, RDS
-- Blue/Green deployments with zero-downtime switching and tested rollback
-- Secure IAM role separation and SSM integration
+**Highlights**
+- Multi-tenant isolation
+- Role-based access control
+- Redis session management
+- Structured security audit logs
+
+**Stack**
+
+`FastAPI` `Python` `JWT` `RBAC` `Redis` `PostgreSQL`
+
+---
+
+## 🔹 observability-platform
+
+Production-style Prometheus/Grafana observability platform with real incident investigation.
+
+**Highlights**
+- ServiceMonitor configuration
+- CrashLoopBackOff troubleshooting
+- Production dashboards
+- Metrics-driven debugging
+
+**Stack**
+
+`Kubernetes` `Prometheus` `Grafana` `ServiceMonitor`
+
+---
+
+## 🔹 nodeflow-api
+
+Production Node.js asynchronous job orchestration and webhook delivery platform.
+
+**Highlights**
+- BullMQ workers
+- Redis-backed queues
+- Reliable webhook delivery
+- Idempotency support
+- Cross-process event communication
+
+**Stack**
+
+`Node.js` `Express` `BullMQ` `Redis` `PostgreSQL`
+
+---
+
+## 🔹 infra-core
+
+AWS infrastructure and security foundation built entirely with Infrastructure as Code.
+
+**Highlights**
+- IAM security
+- Account hardening
+- Terraform modules
+- AWS security services
+
+**Stack**
+
+`AWS` `Terraform` `IAM`
+
+---
+
+## 🔹 CloudGuard Lite
+
+Event-driven AWS security detection platform.
+
+**Pipeline**
+
+CloudTrail → EventBridge → Lambda → DynamoDB → SNS
+
+**Highlights**
+- Automated threat detection
+- Infrastructure fully provisioned with Terraform
+- Live event processing
+
+**Stack**
+
+`Terraform` `Lambda` `CloudTrail` `EventBridge` `DynamoDB` `SNS`
+
+---
+
+## 🔹 ecs-production-platform
+
+Production-grade AWS container platform.
+
+**Highlights**
+- 36+ Terraform resources
+- ECS Fargate
+- Application Load Balancer
+- RDS
+- Blue/Green deployments
+- GitHub Actions OIDC authentication
+
+**Stack**
 
 `Terraform` `AWS ECS` `ALB` `RDS` `IAM` `GitHub Actions`
 
 ---
 
-### 🔹 [AWS Cost & Security Auditor](https://github.com/cypher682/aws-cost-security-auditor)
-CLI tool for detecting cloud waste and security misconfigurations against CIS benchmarks.
+## 🔹 aws-cost-security-auditor
 
-- Identified 30+ real security and cost issues across IAM, S3, CloudWatch
-- Structured reporting output for actionable remediation
+Python CLI for AWS cost optimization and CIS benchmark auditing.
 
-`Python` `boto3` `AWS` `IAM` `CloudWatch`
+**Highlights**
+- Detects cloud waste
+- CIS-aligned security checks
+- Structured remediation reports
 
----
+**Stack**
 
-### 🔹 [AWS Microservices CI/CD Platform](https://github.com/cypher682/aws-microservices-cicd)
-Multi-service deployment system with full CI/CD automation and observability.
-
-- 3 services deployed with automated pipelines
-- Infrastructure via Terraform, configuration via Ansible
-- Integrated Prometheus & Grafana monitoring stack
-
-`Terraform` `Ansible` `Docker` `GitHub Actions` `Prometheus` `Grafana`
+`Python` `boto3` `AWS`
 
 ---
 
-### 🔹 [Polyglot Microservices Platform](https://github.com/cypher682/polyglot-microservices-platform)
-Distributed system across multiple languages with dual CI/CD pipelines and drift detection.
+# Other Projects
 
-- Infrastructure drift detection pipeline
-- Multi-language service orchestration
-- Application and infrastructure deployment automation
-
-`Docker Compose` `Terraform` `Ansible` `GitHub Actions`
+- **aws-microservices-cicd** — Multi-service CI/CD platform using Terraform, Ansible, Prometheus, and Grafana.
+- **polyglot-microservices-platform** — Distributed microservices with infrastructure drift detection and dual CI/CD pipelines.
+- **vpcctl-linux-networking** — Linux networking simulator implementing AWS VPC concepts using namespaces, bridges, and iptables.
 
 ---
 
-### 🔹 [VPC Simulation CLI — Linux Networking](https://github.com/cypher682/vpcctl-linux-networking)
-Python CLI that simulates AWS VPC behavior using Linux networking primitives.
+# Tech Stack
 
-- Implements network namespaces, bridges, and iptables rules
-- Demonstrates cloud networking internals at the OS level
-
-`Python` `Linux` `iptables` `iproute2`
-
----
-
-### 🔹 [Ansible DeenAI Deployment](https://github.com/cypher682/ansible-deenai-deployment)
-Automated deployment pipeline for a production application using Ansible.
-
-`Ansible` `Linux` `AWS`
+| Category | Technologies |
+|-----------|--------------|
+| Cloud | AWS (EC2, VPC, ECS, RDS, IAM, S3, GuardDuty, CloudTrail, EventBridge, Lambda) |
+| Infrastructure as Code | Terraform |
+| Containers | Docker, ECS Fargate, Kubernetes |
+| CI/CD | GitHub Actions, Ansible |
+| Backend | FastAPI, Node.js/Express, Go |
+| Languages | Python, Go, JavaScript, Bash |
+| Monitoring | Prometheus, Grafana, CloudWatch |
+| Operating Systems | Linux |
 
 ---
 
-## Tech Stack
-
-| Layer | Tools |
-|---|---|
-| **Cloud & Infra** | AWS (EC2, VPC, ECS, RDS, IAM, S3, GuardDuty, CloudTrail), Terraform |
-| **Containers & Orchestration** | Docker, ECS Fargate, Kubernetes |
-| **CI/CD & Automation** | GitHub Actions, Ansible |
-| **Languages** | Python, Bash, Go |
-| **Monitoring & Ops** | Prometheus, Grafana, CloudWatch, Linux |
-
----
-
-## Certifications
+# Certifications
 
 | Status | Certification |
-|---|---|
-| ✅ | LFS101 — Introduction to Linux (Linux Foundation) |
-| ✅ | LFS158 — Introduction to Kubernetes (Linux Foundation) |
+|--------|---------------|
+| ✅ | LFS101 — Introduction to Linux |
+| ✅ | LFS250 — Kubernetes and Cloud Native Essentials |
 | 🔄 | KCNA — In Progress |
-| 🔄 | AWS Solutions Architect Associate — In Progress |
-| 🎯 | CKA — Targeted |
-| 🎯 | AWS Security Specialty — Targeted |
 
 ---
 
-## Current Focus
+# Current Focus
 
-- Kubernetes production systems — EKS + GitOps (ArgoCD, Helm)
-- Cloud security automation — event-driven auditing pipelines
-- Internal developer platforms and IaC standardization
-- Deep Linux operator skills (`/proc`, namespaces, systemd)
+- Production Kubernetes (EKS)
+- GitOps (ArgoCD & Helm)
+- Platform Engineering
+- Cloud Security Automation
+- Internal Developer Platforms
+- Advanced Linux internals
 
 ---
 
-## Open To
+# Open To
 
-Remote **Cloud / DevOps / Platform / Infrastructure Engineer** roles in AWS-heavy, IaC-first environments.  
-Also available for freelance: Dockerization, GitHub Actions CI/CD, AWS setup, Terraform IaC.
+Cloud Engineer • Infrastructure Engineer • DevOps Engineer • Platform Engineer
+
+Available for:
+- AWS Infrastructure
+- Terraform
+- Docker
+- Kubernetes
+- CI/CD Automation
+- Cloud Security
 
 ---
 
@@ -128,19 +209,3 @@ Also available for freelance: Dockerization, GitHub Actions CI/CD, AWS setup, Te
   <img src="https://github-readme-stats.vercel.app/api?username=cypher682&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="150"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cypher682&layout=compact&theme=tokyonight&hide_border=true" height="150"/>
 </p>
-
-
-<!--
-**cypher682/cypher682** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
