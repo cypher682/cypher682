@@ -1,111 +1,395 @@
 <h1 align="center">Suleiman Abdulrahman (Cypher)</h1>
-<h3 align="center">Cloud Infrastructure, DevOps & Platform Engineer</h3>
+
+<h3 align="center">Cloud Infrastructure · DevOps · Platform Engineering</h3>
 
 <p align="center">
-  Designing, automating, and operating production-grade cloud systems across AWS & Kubernetes — built for security, observability, and resilience.
+  Building, automating, and operating cloud-native systems with a focus on infrastructure, security, observability, and reliability.
 </p>
 
 <p align="center">
-  <a href="https://github.com/cypher682"><img src="https://img.shields.io/badge/GitHub-cypher682-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/suleiman-abdulrahman-dev"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:suleiman.abdulrahman.dev@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://github.com/cypher682">
+    <img src="https://img.shields.io/badge/GitHub-cypher682-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://linkedin.com/in/suleiman-abdulrahman-dev">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:suleiman.abdulrahman.dev@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
 </p>
 
 ---
 
-## 🚀 Core Engineering Focus
+## About
 
-- **Cloud Infrastructure & IaC:** Multi-environment AWS infrastructure (VPC, EC2 ASG, ALB, RDS, ECS Fargate), Terraform modules, Pulumi, Ansible configuration management.
-- **Cloud Security & Compliance:** Event-driven automated security remediation, CIS AWS Foundations Benchmarks, GuardDuty, Security Hub, AWS Config, zero-open-port SSM architecture.
-- **Observability & Telemetry:** Full LGTM stack (Loki, Grafana, Tempo, Prometheus), OpenTelemetry Collector pipelines, custom Prometheus exporters, trace-to-log correlation, dashboards-as-code.
-- **CI/CD & Software Engineering:** OIDC role federation pipelines (GitHub Actions), containerized backend microservices in Python (FastAPI) and Node.js/TypeScript (BullMQ, Redis, WebSockets).
+I am a Cloud Infrastructure and DevOps Engineer focused on building systems that are **automated, secure, observable, and resilient**.
 
----
+My work sits between infrastructure and software engineering — from provisioning AWS environments with Terraform and hardening Linux systems with Ansible, to deploying Kubernetes workloads through GitOps and building the backend systems those platforms operate.
 
-## 📦 Featured Portfolio Projects
+My engineering focus includes:
 
-### 🔹 [infra-core](https://github.com/cypher682/infra-core)
-Production-grade AWS infrastructure platform provisioned with modular Terraform, hardened with Ansible, and delivered through a GitHub Actions OIDC pipeline.
-
-- 2-tier VPC (Public/Private), ALB, EC2 ASG, RDS PostgreSQL, GuardDuty, Security Hub, AWS Config.
-- Zero SSH ports open — full operational management via AWS SSM Session Manager.
-- Checkov IaC security scanning & automated HTTP ALB smoke testing on deployment.
-
-`Terraform` `Ansible` `AWS` `SSM` `GuardDuty` `GitHub Actions (OIDC)`
+- Cloud infrastructure and AWS architecture
+- Infrastructure as Code and configuration management
+- Kubernetes and platform engineering
+- GitOps and progressive delivery
+- Cloud security and DevSecOps
+- Observability and SRE practices
+- Distributed systems and asynchronous processing
+- Backend engineering with Python and TypeScript
 
 ---
 
-### 🔹 [cloudguard-pro](https://github.com/cypher682/cloudguard-pro)
-Event-driven AWS security platform that detects and automatically remediates cloud misconfigurations in real time.
+## Core Engineering Focus
 
-- Real-time API event interception via CloudTrail → EventBridge → 7 Python Lambda remediators.
-- Auto-revokes open SSH rules (60s), deletes console access for non-MFA users (30s), restores S3 public access blocks.
-- Dual IaC architecture: Terraform for static infrastructure, Pulumi (Python) for compute & Lambda layers.
+### Cloud Infrastructure & IaC
 
-`Python` `AWS Lambda` `EventBridge` `DynamoDB Streams` `Terraform` `Pulumi` `SNS`
+- AWS infrastructure architecture and automation
+- Multi-environment Terraform
+- Modular infrastructure design
+- Terraform remote state and state management
+- Pulumi
+- Ansible configuration management
+- EC2, VPC, ALB, ASG, RDS, ECS Fargate
+- AWS Systems Manager and private infrastructure
+- IAM and least-privilege architecture
+
+### Kubernetes & Platform Engineering
+
+- Kubernetes cluster architecture and operations
+- Helm
+- ArgoCD
+- Argo Rollouts
+- GitOps
+- Kubernetes resource management
+- StatefulSets and DaemonSets
+- OPA/Gatekeeper policy enforcement
+- Containerized application platforms
+
+### Security & DevSecOps
+
+- AWS security architecture
+- OIDC-based CI/CD authentication
+- CIS Linux hardening
+- GuardDuty, Security Hub, and AWS Config
+- SOPS + AGE secrets management
+- Cosign container signing
+- Trivy container security
+- Checkov IaC scanning
+- Bandit SAST
+- Kubernetes admission policies
+
+### Observability & SRE
+
+- Prometheus
+- Grafana
+- Loki
+- Tempo
+- OpenTelemetry
+- Alertmanager
+- Custom Prometheus exporters
+- Dashboards-as-code
+- Metrics, logs, and distributed traces
+- Trace-to-log correlation
+
+### Backend & Distributed Systems
+
+- Python / FastAPI
+- Node.js / TypeScript / Express
+- Go
+- PostgreSQL
+- Redis
+- RabbitMQ
+- Kafka
+- BullMQ
+- WebSockets
+- Distributed locking
+- Idempotency
+- Circuit breakers
+- Retry and dead-letter queue patterns
 
 ---
 
-### 🔹 [observability-platform](https://github.com/cypher682/observability-platform)
-Standalone, vendor-neutral LGTM observability pipeline built from scratch to correlate metrics, logs, and traces.
+# Featured Projects
 
-- OpenTelemetry Collector routing traces to Tempo, metrics to Prometheus, and logs to Loki.
-- Loki `derivedFields` mapping log `trace_id` directly to Tempo trace waterfalls.
-- Custom Python Prometheus exporter & 7 Grafana dashboards provisioned as code.
+## Infrastructure
 
-`Prometheus` `Loki` `Tempo` `Grafana` `OpenTelemetry` `Docker Compose` `Kubernetes`
+### [infra-core](https://github.com/cypher682/infra-core)
 
----
+Production-oriented AWS infrastructure platform provisioned with Terraform and configured with Ansible.
 
-### 🔹 [authcore-service](https://github.com/cypher682/authcore-service)
-Production-grade IAM service implementing secure authentication, authorization, and tenant isolation.
+- Multi-AZ VPC architecture
+- Application Load Balancer
+- EC2 Auto Scaling Group
+- RDS PostgreSQL
+- Private application infrastructure
+- Zero inbound SSH
+- AWS SSM Session Manager for operational access
+- CIS-aligned Linux hardening with Ansible
+- GitHub Actions using short-lived AWS OIDC credentials
+- Infrastructure security validation with Checkov
+- Automated deployment smoke testing
 
-- OAuth2 with PKCE, TOTP 2FA/MFA, AES-256 encrypted refresh token rotation, and RBAC permissions.
-- Redis-backed rate limiting, brute-force IP throttling, and audit logging.
-- Fully tested Python FastAPI architecture with Docker containerization and CI/CD.
-
-`FastAPI` `Python` `PostgreSQL` `Redis` `OAuth2` `Docker` `pytest`
-
----
-
-### 🔹 [nodeflow-api](https://github.com/cypher682/nodeflow-api)
-High-throughput asynchronous webhook delivery & workflow engine engineered for reliability under high concurrency.
-
-- BullMQ & Redis distributed task queues with exponential backoff retries & dead-letter queue (DLQ).
-- HMAC SHA-256 signature verification, circuit breaker pattern, and real-time WebSocket job updates.
-- TypeScript architecture with PostgreSQL transaction management and health monitoring.
-
-`Node.js` `TypeScript` `BullMQ` `Redis` `PostgreSQL` `WebSockets`
+`AWS` `Terraform` `Ansible` `SSM` `RDS` `ALB` `GitHub Actions`
 
 ---
 
-### 🔹 [ecs-production-platform](https://github.com/cypher682/ecs-production-platform)
-Production container platform built on AWS ECS Fargate featuring blue-green zero-downtime deployments.
+## Cloud Security
 
-- Modular Terraform managing 36+ resources across VPC, ALB, ECS Fargate, and RDS PostgreSQL.
-- ALB target group weighting for zero-downtime deployment switches and instant automated rollbacks.
-- Verified live AWS sprint evidence with full SSL certificate termination (ACM) and Route 53 DNS.
+### [cloudguard-pro](https://github.com/cypher682/cloudguard-pro)
+
+Event-driven AWS security detection and remediation platform.
+
+- CloudTrail → EventBridge → Lambda security event pipeline
+- Seven Python Lambda functions for security automation
+- Automated remediation of exposed security-group rules
+- S3 public-access protection
+- IAM security remediation
+- Scheduled CIS-aligned AWS security scanning
+- DynamoDB-based event and finding storage
+- Terraform and Pulumi infrastructure implementations
+- 70+ automated tests
+- Bandit, Checkov, and Trivy integrated into CI
+
+`Python` `AWS Lambda` `EventBridge` `DynamoDB` `Terraform` `Pulumi` `SNS`
+
+---
+
+## Cloud-Native Systems
+
+### [nexuspay-platform](https://github.com/cypher682/nexuspay-platform)
+
+Cloud-native fintech platform demonstrating microservices, financial integrity, asynchronous messaging, and Kubernetes-based delivery.
+
+- Four decoupled services:
+  - API Gateway
+  - Authentication
+  - Payments
+  - Notifications
+- Double-entry ledger using integer minor units
+- Strict payment state transitions
+- RabbitMQ asynchronous processing
+- Dead-letter queue architecture
+- HMAC-signed webhooks
+- Redis-backed services
+- Helm deployment architecture
+- ArgoCD GitOps delivery
+- ArgoCD ApplicationSets
+- OPA/Gatekeeper policy enforcement
+- k6 load testing
+- OpenAPI contract validation
+- Trivy container scanning
+
+`TypeScript` `Express 5` `PostgreSQL` `Redis` `RabbitMQ` `Kubernetes` `Helm` `ArgoCD`
+
+---
+
+## GitOps & Progressive Delivery
+
+### [gitops-pipeline](https://github.com/cypher682/gitops-pipeline)
+
+GitOps delivery platform combining continuous delivery, progressive deployment, and software supply-chain security.
+
+- GitLab CI application pipeline
+- ArgoCD declarative deployment
+- Argo Rollouts progressive canary delivery
+- Prometheus-based deployment analysis
+- Automated rollback on failed metrics
+- Cosign cryptographic container signing
+- SOPS + AGE encrypted secrets
+- Kubernetes admission controls
+- Helm-based deployment configuration
+
+`GitLab CI` `ArgoCD` `Argo Rollouts` `Kubernetes` `Helm` `Cosign` `SOPS` `AGE`
+
+---
+
+## Observability
+
+### [observability-platform](https://github.com/cypher682/observability-platform)
+
+Vendor-neutral observability platform for metrics, logs, and distributed traces.
+
+- Prometheus metrics collection
+- Grafana visualization
+- Loki centralized logging
+- Tempo distributed tracing
+- OpenTelemetry Collector
+- TraceID-based log/trace correlation
+- Custom Python Prometheus exporter
+- Seven Grafana dashboards
+- Dashboards provisioned as code
+- Alertmanager severity-based routing
+- Docker Compose and Kubernetes deployment support
+
+`Prometheus` `Grafana` `Loki` `Tempo` `OpenTelemetry` `Alertmanager` `Python`
+
+---
+
+## Distributed Systems
+
+### [nodeflow-api](https://github.com/cypher682/nodeflow-api)
+
+Distributed background-job and webhook orchestration engine designed around reliability and high concurrency.
+
+- BullMQ + Redis distributed job processing
+- Prioritized jobs
+- Delayed and scheduled execution
+- Retry handling
+- Dead-letter queues
+- Exponential backoff with jitter
+- HMAC-SHA256 webhook signing
+- Circuit-breaker protection
+- Real-time WebSocket job updates
+- Distributed locking
+- Idempotency controls
+- PostgreSQL persistence
+
+`Node.js` `TypeScript` `BullMQ` `Redis` `PostgreSQL` `WebSockets` `Prisma`
+
+---
+
+# Systems Foundations
+
+## [ecs-production-platform](https://github.com/cypher682/ecs-production-platform)
+
+Production AWS ECS Fargate platform demonstrating infrastructure automation and blue-green deployment.
+
+- 36+ Terraform-managed AWS resources
+- VPC networking
+- Application Load Balancer
+- ECS Fargate
+- RDS PostgreSQL
+- ACM SSL termination
+- Route 53 DNS
+- ALB weighted target groups
+- Blue-green deployment strategy
+- Tested rollback procedures
+- OIDC-based CI/CD
+- Infrastructure verification and teardown evidence
 
 `Terraform` `AWS ECS Fargate` `ALB` `RDS` `Route 53` `ACM`
 
 ---
 
-## 🛠️ Technical Skill Matrix
+## [authcore-service](https://github.com/cypher682/authcore-service)
 
-| Domain | Technologies & Tools |
-|---|---|
-| **Cloud Platforms** | AWS (VPC, EC2, ECS Fargate, RDS, S3, IAM, SSM, CloudTrail, GuardDuty, Security Hub, Config), Azure |
-| **Infrastructure as Code** | Terraform (Modular Architecture, Remote State), Pulumi (Python), CloudFormation |
-| **Containers & Orchestration** | Docker, Docker Compose, Kubernetes, Helm, Istio, ArgoCD |
-| **CI/CD & Automation** | GitHub Actions (OIDC Federation, SAST, Checkov), Ansible (Hardening, Playbooks) |
-| **Observability & Logging** | Prometheus, Grafana, Loki, Tempo, OpenTelemetry Collector, Promtail, Alertmanager, CloudWatch |
-| **Software & Systems** | Python (FastAPI, boto3), Node.js / TypeScript (Express, BullMQ), Go, Bash, Linux Systems (`proc`, namespaces, `iptables`) |
+Security-focused IAM service implementing modern authentication and authorization patterns.
+
+- OAuth2 Authorization Code flow with PKCE
+- TOTP MFA
+- Refresh-token family management
+- Refresh-token reuse detection
+- Dynamic RBAC
+- Redis-backed rate limiting
+- Progressive brute-force protection
+- Authentication audit trails
+- PostgreSQL persistence
+- Celery background processing
+- Alembic migrations
+- Dockerized deployment
+
+`FastAPI` `Python` `PostgreSQL` `Redis` `Celery` `OAuth2` `Docker`
 
 ---
 
-## 📊 GitHub Analytics
+## [vpcctl-linux-networking](https://github.com/cypher682/vpcctl-linux-networking)
+
+Linux networking CLI demonstrating the underlying primitives behind cloud networking.
+
+- Linux network namespaces
+- Virtual Ethernet pairs
+- Linux bridges
+- IP routing
+- iptables NAT
+- Local virtual network construction
+- Python CLI automation
+
+`Python` `Linux` `Networking` `Namespaces` `veth` `iptables`
+
+---
+
+# Engineering Principles
+
+\`\`\`text
+Provision everything
+        ↓
+Infrastructure as Code
+
+Deploy declaratively
+        ↓
+GitOps
+
+Authenticate without long-lived credentials
+        ↓
+OIDC / Short-lived credentials
+
+Operate without open SSH
+        ↓
+SSM / Controlled access
+
+Secure the software supply chain
+        ↓
+Sign → Scan → Verify
+
+Observe before debugging
+        ↓
+Metrics + Logs + Traces
+
+Design for failure
+        ↓
+Retries + DLQs + Circuit Breakers
+
+Protect data integrity
+        ↓
+Idempotency + Transactions + Exact Accounting
+
+Automate repetitive operations
+        ↓
+CI/CD + Policy + Remediation
+\`\`\`
+
+## Technical Stack
+
+| Domain | Technologies |
+|---|---|
+| Cloud Platforms | AWS, Azure |
+| AWS Infrastructure | VPC, EC2, ASG, ALB, RDS, ECS Fargate, S3, IAM, SSM |
+| AWS Security | GuardDuty, Security Hub, AWS Config, CloudTrail, KMS |
+| IaC | Terraform, Pulumi, CloudFormation |
+| Configuration | Ansible |
+| Containers | Docker, Docker Compose |
+| Orchestration | Kubernetes, Helm |
+| Platform Engineering | ArgoCD, Argo Rollouts, OPA/Gatekeeper |
+| CI/CD | GitHub Actions, GitLab CI, Jenkins |
+| Supply Chain Security | Cosign, SOPS, AGE, Trivy |
+| IaC Security | Checkov |
+| SAST | Bandit |
+| Observability | Prometheus, Grafana, Loki, Tempo, OpenTelemetry, Alertmanager |
+| Backend | Python, FastAPI, Node.js, TypeScript, Express, Go |
+| Databases | PostgreSQL, Redis |
+| Messaging | RabbitMQ, Kafka, BullMQ |
+| Systems | Linux, Bash, namespaces, veth, bridges, iptables |
+
+---
+
+# Certifications
+
+- **Kubernetes and Cloud Native Associate (KCNA)**
+  *Cloud Native Computing Foundation (CNCF)*
+
+- **Linux Foundation Training**
+  - LFS101 — Introduction to Linux
+  - LFS158 — Introduction to Kubernetes
+
+---
+
+# GitHub Activity
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=cypher682&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="150" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=cypher682&layout=compact&theme=tokyonight&hide_border=true" height="150" />
+</p>
+
+<p align="center">
+  <i>Build it. Automate it. Secure it. Observe it.</i>
 </p>
