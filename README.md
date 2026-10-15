@@ -1,395 +1,156 @@
-<h1 align="center">Suleiman Abdulrahman (Cypher)</h1>
+# Suleiman Abdulrahman
 
-<h3 align="center">Cloud Infrastructure · DevOps · Platform Engineering</h3>
+Cloud & DevOps engineer · Remote (UTC+1)
 
-<p align="center">
-  Building, automating, and operating cloud-native systems with a focus on infrastructure, security, observability, and reliability.
-</p>
-
-<p align="center">
-  <a href="https://github.com/cypher682">
-    <img src="https://img.shields.io/badge/GitHub-cypher682-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://linkedin.com/in/suleiman-abdulrahman-dev">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:suleiman.abdulrahman.dev@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</p>
+[suleiman.abdulrahman.dev@gmail.com](mailto:suleiman.abdulrahman.dev@gmail.com) ·
+[LinkedIn](https://linkedin.com/in/suleiman-abdulrahman-dev) ·
+[Dev.to](https://dev.to/cypher682)
 
 ---
 
 ## About
 
-I am a Cloud Infrastructure and DevOps Engineer focused on building systems that are **automated, secure, observable, and resilient**.
+I'm a KCNA-certified cloud and DevOps engineer with about 1.5 years of hands-on AWS work. I like
+infrastructure that is written as code, delivered through GitOps, secure by default, and
+observable from the start. I came to this from software development, so I'm comfortable on both
+sides of the application/infrastructure line.
 
-My work sits between infrastructure and software engineering — from provisioning AWS environments with Terraform and hardening Linux systems with Ansible, to deploying Kubernetes workloads through GitOps and building the backend systems those platforms operate.
+Most of the projects below are self-directed: I build a system end to end, run it, and then write
+down what actually happened. Each README says plainly what is verified, what is simulated, and
+what is still missing — including where something only runs locally.
 
-My engineering focus includes:
+## What I'm building now
 
-- Cloud infrastructure and AWS architecture
-- Infrastructure as Code and configuration management
-- Kubernetes and platform engineering
-- GitOps and progressive delivery
-- Cloud security and DevSecOps
-- Observability and SRE practices
-- Distributed systems and asynchronous processing
-- Backend engineering with Python and TypeScript
+### Vortex — embedded finance for small businesses *(private)*
 
----
+My main current project. It's proprietary, so there's no link here, but I'm happy to walk through
+the architecture on a call.
 
-## Core Engineering Focus
+- A two-layer fintech product: an embedded-finance core (multi-tenant wallets, internal
+  transfers, payouts, a double-entry append-only ledger) with SMB financial operations on top —
+  invoicing, expenses, subscription billing, a VAT/WHT tax engine, bank reconciliation, KYC/KYB
+  tiers, outbound webhooks and a developer portal.
+- Python 3.12 and FastAPI over PostgreSQL 16, Redis and Kafka, with a Next.js dashboard. Built as
+  a modular monolith, so a module can be split into a service later without a rewrite.
+- Money correctness is treated as a hard requirement: integer minor-unit amounts, row-level
+  security enforced by a non-superuser database role, idempotency keys on every money move, and
+  64 tracked Alembic migrations.
+- 85 architecture decision records, 700+ backend tests, and CI across three stacks — `ruff` and
+  pytest for Python, `tsc`/vitest/`next build` for TypeScript, and Terraform, Helm, Checkov and
+  Trivy for infrastructure.
 
-### Cloud Infrastructure & IaC
+## What I work with
 
-- AWS infrastructure architecture and automation
-- Multi-environment Terraform
-- Modular infrastructure design
-- Terraform remote state and state management
-- Pulumi
-- Ansible configuration management
-- EC2, VPC, ALB, ASG, RDS, ECS Fargate
-- AWS Systems Manager and private infrastructure
-- IAM and least-privilege architecture
-
-### Kubernetes & Platform Engineering
-
-- Kubernetes cluster architecture and operations
-- Helm
-- ArgoCD
-- Argo Rollouts
-- GitOps
-- Kubernetes resource management
-- StatefulSets and DaemonSets
-- OPA/Gatekeeper policy enforcement
-- Containerized application platforms
-
-### Security & DevSecOps
-
-- AWS security architecture
-- OIDC-based CI/CD authentication
-- CIS Linux hardening
-- GuardDuty, Security Hub, and AWS Config
-- SOPS + AGE secrets management
-- Cosign container signing
-- Trivy container security
-- Checkov IaC scanning
-- Bandit SAST
-- Kubernetes admission policies
-
-### Observability & SRE
-
-- Prometheus
-- Grafana
-- Loki
-- Tempo
-- OpenTelemetry
-- Alertmanager
-- Custom Prometheus exporters
-- Dashboards-as-code
-- Metrics, logs, and distributed traces
-- Trace-to-log correlation
-
-### Backend & Distributed Systems
-
-- Python / FastAPI
-- Node.js / TypeScript / Express
-- Go
-- PostgreSQL
-- Redis
-- RabbitMQ
-- Kafka
-- BullMQ
-- WebSockets
-- Distributed locking
-- Idempotency
-- Circuit breakers
-- Retry and dead-letter queue patterns
+| | |
+|---|---|
+| **Cloud & IaC** | AWS (VPC, EC2/ASG, ALB, RDS, ECS Fargate, ECR, S3, IAM, SSM, Lambda, EventBridge, CloudWatch), Terraform, Ansible |
+| **Containers & delivery** | Docker, Kubernetes, Helm, Argo CD, Argo Rollouts, GitHub Actions (OIDC), GitLab CI |
+| **Security** | Trivy, Checkov, Cosign, SOPS + age, OPA Gatekeeper, CIS benchmarks, least-privilege IAM |
+| **Observability** | Prometheus, Grafana, Loki, Tempo, Jaeger, OpenTelemetry, Alertmanager, SLO alerts |
+| **Languages** | Python, Go, Bash, TypeScript, SQL, Linux |
 
 ---
 
-# Featured Projects
-
-## Infrastructure
-
-### [infra-core](https://github.com/cypher682/infra-core)
-
-Production-oriented AWS infrastructure platform provisioned with Terraform and configured with Ansible.
-
-- Multi-AZ VPC architecture
-- Application Load Balancer
-- EC2 Auto Scaling Group
-- RDS PostgreSQL
-- Private application infrastructure
-- Zero inbound SSH
-- AWS SSM Session Manager for operational access
-- CIS-aligned Linux hardening with Ansible
-- GitHub Actions using short-lived AWS OIDC credentials
-- Infrastructure security validation with Checkov
-- Automated deployment smoke testing
-
-`AWS` `Terraform` `Ansible` `SSM` `RDS` `ALB` `GitHub Actions`
-
----
-
-## Cloud Security
-
-### [cloudguard-pro](https://github.com/cypher682/cloudguard-pro)
-
-Event-driven AWS security detection and remediation platform.
-
-- CloudTrail → EventBridge → Lambda security event pipeline
-- Seven Python Lambda functions for security automation
-- Automated remediation of exposed security-group rules
-- S3 public-access protection
-- IAM security remediation
-- Scheduled CIS-aligned AWS security scanning
-- DynamoDB-based event and finding storage
-- Terraform and Pulumi infrastructure implementations
-- 70+ automated tests
-- Bandit, Checkov, and Trivy integrated into CI
-
-`Python` `AWS Lambda` `EventBridge` `DynamoDB` `Terraform` `Pulumi` `SNS`
-
----
-
-## Cloud-Native Systems
-
-### [nexuspay-platform](https://github.com/cypher682/nexuspay-platform)
-
-Cloud-native fintech platform demonstrating microservices, financial integrity, asynchronous messaging, and Kubernetes-based delivery.
-
-- Four decoupled services:
-  - API Gateway
-  - Authentication
-  - Payments
-  - Notifications
-- Double-entry ledger using integer minor units
-- Strict payment state transitions
-- RabbitMQ asynchronous processing
-- Dead-letter queue architecture
-- HMAC-signed webhooks
-- Redis-backed services
-- Helm deployment architecture
-- ArgoCD GitOps delivery
-- ArgoCD ApplicationSets
-- OPA/Gatekeeper policy enforcement
-- k6 load testing
-- OpenAPI contract validation
-- Trivy container scanning
-
-`TypeScript` `Express 5` `PostgreSQL` `Redis` `RabbitMQ` `Kubernetes` `Helm` `ArgoCD`
-
----
-
-## GitOps & Progressive Delivery
+## Selected projects
 
 ### [gitops-pipeline](https://github.com/cypher682/gitops-pipeline)
 
-GitOps delivery platform combining continuous delivery, progressive deployment, and software supply-chain security.
+- GitLab CI commits desired state to Git and Argo CD reconciles it, so a rollback is a git revert.
+  One ApplicationSet template generates the dev and staging environments.
+- Argo Rollouts shifts traffic 10% → 50% → 100% and aborts automatically if the Prometheus error
+  rate passes 5%. Ran 22/22 pipeline jobs green on a local Kubernetes cluster.
+- Cosign keyless signing and SOPS + age encrypted secrets.
 
-- GitLab CI application pipeline
-- ArgoCD declarative deployment
-- Argo Rollouts progressive canary delivery
-- Prometheus-based deployment analysis
-- Automated rollback on failed metrics
-- Cosign cryptographic container signing
-- SOPS + AGE encrypted secrets
-- Kubernetes admission controls
-- Helm-based deployment configuration
+`GitLab CI` `Argo CD` `Argo Rollouts` `Kubernetes` `Helm` `Cosign` `SOPS`
 
-`GitLab CI` `ArgoCD` `Argo Rollouts` `Kubernetes` `Helm` `Cosign` `SOPS` `AGE`
+### [infra-core](https://github.com/cypher682/infra-core)
 
----
+- 79 AWS resources provisioned with modular Terraform across two environments (2-tier, 2-AZ VPC,
+  ALB, EC2 Auto Scaling, RDS, ECR, IAM, CloudWatch), verified end to end then destroyed to keep
+  costs down.
+- No inbound SSH: private subnets, IMDSv2, admin access only through SSM Session Manager, with
+  GuardDuty, Security Hub (CIS v1.4) and AWS Config as a baseline.
+- Pull requests run a Terraform plan behind a Checkov gate; merges apply, run 50 idempotent
+  Ansible hardening tasks and smoke-test the ALB — authenticating with GitHub OIDC, no stored keys.
 
-## Observability
+`AWS` `Terraform` `Ansible` `SSM` `GitHub Actions OIDC` `Checkov`
+
+### [nexuspay-platform](https://github.com/cypher682/nexuspay-platform)
+
+- Four TypeScript services (gateway, auth, payments, notifications) behind one public entrypoint,
+  delivered with a Helm library chart, an Argo CD ApplicationSet and Gatekeeper policies.
+- Payments are idempotent with a double-entry ledger in integer minor units; k6 load testing found
+  three real bugs, including synchronous bcrypt blocking the event loop.
+- Runs locally on Docker Compose and minikube — not deployed to a cloud cluster, and the payment
+  and email/SMS providers are simulated behind clean interfaces so the stack works offline.
+
+`TypeScript` `Express 5` `PostgreSQL` `Redis` `RabbitMQ` `Kubernetes` `Helm` `Argo CD` `k6`
+
+### [cloudguard-pro](https://github.com/cypher682/cloudguard-pro)
+
+- CloudTrail → EventBridge → Lambda. Seven Python functions remediate misconfigurations in under
+  a minute: revoking 0.0.0.0/0 SSH and RDP rules, re-enabling S3 Block Public Access, and removing
+  console logins for IAM users without MFA — verified against a live account.
+- 70 tests at 87% coverage behind an 80% CI gate, with Bandit and Checkov in the pipeline.
+
+`Python` `AWS Lambda` `EventBridge` `DynamoDB` `Terraform` `Pulumi`
 
 ### [observability-platform](https://github.com/cypher682/observability-platform)
 
-Vendor-neutral observability platform for metrics, logs, and distributed traces.
-
-- Prometheus metrics collection
-- Grafana visualization
-- Loki centralized logging
-- Tempo distributed tracing
-- OpenTelemetry Collector
-- TraceID-based log/trace correlation
-- Custom Python Prometheus exporter
-- Seven Grafana dashboards
-- Dashboards provisioned as code
-- Alertmanager severity-based routing
-- Docker Compose and Kubernetes deployment support
+- Prometheus, Loki, Tempo, Grafana, Alertmanager and an OpenTelemetry Collector across 14 Docker
+  Compose services, with trace-to-log correlation and alert inhibition backed by per-alert runbooks.
+- Seven Grafana dashboards provisioned as code, plus a custom Python Prometheus exporter.
 
 `Prometheus` `Grafana` `Loki` `Tempo` `OpenTelemetry` `Alertmanager` `Python`
 
----
+### [ecs-production-platform](https://github.com/cypher682/ecs-production-platform)
 
-## Distributed Systems
-
-### [nodeflow-api](https://github.com/cypher682/nodeflow-api)
-
-Distributed background-job and webhook orchestration engine designed around reliability and high concurrency.
-
-- BullMQ + Redis distributed job processing
-- Prioritized jobs
-- Delayed and scheduled execution
-- Retry handling
-- Dead-letter queues
-- Exponential backoff with jitter
-- HMAC-SHA256 webhook signing
-- Circuit-breaker protection
-- Real-time WebSocket job updates
-- Distributed locking
-- Idempotency controls
-- PostgreSQL persistence
-
-`Node.js` `TypeScript` `BullMQ` `Redis` `PostgreSQL` `WebSockets` `Prisma`
-
----
-
-# Systems Foundations
-
-## [ecs-production-platform](https://github.com/cypher682/ecs-production-platform)
-
-Production AWS ECS Fargate platform demonstrating infrastructure automation and blue-green deployment.
-
-- 36+ Terraform-managed AWS resources
-- VPC networking
-- Application Load Balancer
-- ECS Fargate
-- RDS PostgreSQL
-- ACM SSL termination
-- Route 53 DNS
-- ALB weighted target groups
-- Blue-green deployment strategy
-- Tested rollback procedures
-- OIDC-based CI/CD
-- Infrastructure verification and teardown evidence
+- A 2-AZ VPC, ALB, ECS Fargate service, private RDS PostgreSQL, ECR, ACM and Route 53, all in
+  Terraform, with ALB weighted target groups for zero-downtime blue-green cutover and a rollback
+  that is the same command.
+- Credentials in SSM Parameter Store, deploys over OIDC. No NAT Gateway (about $33/month avoided);
+  the live validation cost roughly $0.50.
 
 `Terraform` `AWS ECS Fargate` `ALB` `RDS` `Route 53` `ACM`
 
----
+### [platform-cli](https://github.com/cypher682/platform-cli)
 
-## [authcore-service](https://github.com/cypher682/authcore-service)
+- Cobra CLI on the Docker SDK, using goroutines and channels for concurrent health checks and log
+  tailing, plus environment lifecycle, migrations and service scaffolding.
+- CI runs vet and unit tests across 8 packages; goreleaser is wired for releases on version tags,
+  though there is no tagged release yet.
 
-Security-focused IAM service implementing modern authentication and authorization patterns.
+`Go` `Cobra` `Docker SDK` `GitHub Actions`
 
-- OAuth2 Authorization Code flow with PKCE
-- TOTP MFA
-- Refresh-token family management
-- Refresh-token reuse detection
-- Dynamic RBAC
-- Redis-backed rate limiting
-- Progressive brute-force protection
-- Authentication audit trails
-- PostgreSQL persistence
-- Celery background processing
-- Alembic migrations
-- Dockerized deployment
-
-`FastAPI` `Python` `PostgreSQL` `Redis` `Celery` `OAuth2` `Docker`
+**Also on GitHub:** [aws-cost-security-auditor](https://github.com/cypher682/aws-cost-security-auditor)
+(read-only AWS audit CLI, 32 findings on a live account) ·
+[vpcctl-linux-networking](https://github.com/cypher682/vpcctl-linux-networking)
+(VPC rebuilt with Linux network namespaces and iptables)
 
 ---
 
-## [vpcctl-linux-networking](https://github.com/cypher682/vpcctl-linux-networking)
+## Experience
 
-Linux networking CLI demonstrating the underlying primitives behind cloud networking.
+**DevOps intern — Emerj LLC (HNG13 DevOps track)** · Sep 2025 – Dec 2025
+Supported production deployments for two live products, one of them shipping to the Play Store and
+App Store. Rebuilt CI/CD with GitHub Actions across four environments on one product; diagnosed an
+nginx misconfiguration that routed production traffic to the wrong product and migrated to a
+dedicated server (systemd, PM2, nginx, Let's Encrypt); handled remote redeploys and moved server
+config and data with rsync during a provider transition.
 
-- Linux network namespaces
-- Virtual Ethernet pairs
-- Linux bridges
-- IP routing
-- iptables NAT
-- Local virtual network construction
-- Python CLI automation
-
-`Python` `Linux` `Networking` `Namespaces` `veth` `iptables`
-
----
-
-# Engineering Principles
-
-\`\`\`text
-Provision everything
-        ↓
-Infrastructure as Code
-
-Deploy declaratively
-        ↓
-GitOps
-
-Authenticate without long-lived credentials
-        ↓
-OIDC / Short-lived credentials
-
-Operate without open SSH
-        ↓
-SSM / Controlled access
-
-Secure the software supply chain
-        ↓
-Sign → Scan → Verify
-
-Observe before debugging
-        ↓
-Metrics + Logs + Traces
-
-Design for failure
-        ↓
-Retries + DLQs + Circuit Breakers
-
-Protect data integrity
-        ↓
-Idempotency + Transactions + Exact Accounting
-
-Automate repetitive operations
-        ↓
-CI/CD + Policy + Remediation
-\`\`\`
-
-## Technical Stack
-
-| Domain | Technologies |
-|---|---|
-| Cloud Platforms | AWS, Azure |
-| AWS Infrastructure | VPC, EC2, ASG, ALB, RDS, ECS Fargate, S3, IAM, SSM |
-| AWS Security | GuardDuty, Security Hub, AWS Config, CloudTrail, KMS |
-| IaC | Terraform, Pulumi, CloudFormation |
-| Configuration | Ansible |
-| Containers | Docker, Docker Compose |
-| Orchestration | Kubernetes, Helm |
-| Platform Engineering | ArgoCD, Argo Rollouts, OPA/Gatekeeper |
-| CI/CD | GitHub Actions, GitLab CI, Jenkins |
-| Supply Chain Security | Cosign, SOPS, AGE, Trivy |
-| IaC Security | Checkov |
-| SAST | Bandit |
-| Observability | Prometheus, Grafana, Loki, Tempo, OpenTelemetry, Alertmanager |
-| Backend | Python, FastAPI, Node.js, TypeScript, Express, Go |
-| Databases | PostgreSQL, Redis |
-| Messaging | RabbitMQ, Kafka, BullMQ |
-| Systems | Linux, Bash, namespaces, veth, bridges, iptables |
+**Software developer (national service) — Securities and Exchange Commission** · Jul 2025 – May 2026
+Enterprise Architecture & Innovation Division. Set up Oracle Enterprise Suite portal access for the
+HR, tax and finance offices; wrote Python scripts to replace recurring manual Excel processing;
+built components for internal HR and staff portals on Oracle APEX; contributed the Svelte frontend
+for a live public investor-portal feature, adding bot protection against the existing PHP codebase.
 
 ---
 
-# Certifications
+## Certification
 
-- **Kubernetes and Cloud Native Associate (KCNA)**
-  *Cloud Native Computing Foundation (CNCF)*
+**Kubernetes and Cloud Native Associate (KCNA)**, CNCF · July 2026 · ID `LF-spu35j7v73`
 
-- **Linux Foundation Training**
-  - LFS101 — Introduction to Linux
-  - LFS158 — Introduction to Kubernetes
+Self-paced: Linux Foundation LFS101 and LFS158; AWS Cloud Practitioner, Solutions Architect and
+DevOps Engineer coursework. I write up what I build on [Dev.to](https://dev.to/cypher682).
 
----
-
-# GitHub Activity
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=cypher682&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="150" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=cypher682&layout=compact&theme=tokyonight&hide_border=true" height="150" />
-</p>
-
-<p align="center">
-  <i>Build it. Automate it. Secure it. Observe it.</i>
-</p>
+<sub>B.Sc. Computer Science, Ahmadu Bello University · 2024</sub>
