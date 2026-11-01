@@ -32,6 +32,19 @@ call.
 
 ## Projects
 
+### [nexuspay-platform](https://github.com/cypher682/nexuspay-platform)
+
+Four TypeScript services (gateway, auth, payments, notifications) behind a single public
+entrypoint, delivered with a Helm library chart, an Argo CD ApplicationSet and Gatekeeper policies
+for allowed registries, required resources and non-root containers. Payments are idempotent with a
+double-entry ledger in integer minor units. k6 load testing found three real bugs, including
+synchronous bcrypt blocking the event loop. Runs locally on Docker Compose and minikube — not
+deployed to a cloud cluster, and the payment and email/SMS providers are simulated behind clean
+interfaces so the stack works offline.
+
+`TypeScript` `Express 5` `PostgreSQL` `Redis` `RabbitMQ` `Kubernetes` `Helm` `Argo CD` `k6`
+
+
 ### [gitops-pipeline](https://github.com/cypher682/gitops-pipeline)
 
 GitOps delivery with a Prometheus-gated canary. GitLab CI commits desired state to Git and Argo CD
@@ -84,17 +97,6 @@ Gateway (about $33/month avoided). The live validation cost roughly $0.50.
 `Terraform` `AWS ECS Fargate` `ALB` `RDS` `Route 53`
 → [Designing a blue-green ECS platform on AWS](https://dev.to/cypher682/designing-a-production-grade-blue-green-ecs-platform-on-aws-with-terraform-2n5h)
 
-### [nexuspay-platform](https://github.com/cypher682/nexuspay-platform)
-
-Four TypeScript services (gateway, auth, payments, notifications) behind a single public
-entrypoint, delivered with a Helm library chart, an Argo CD ApplicationSet and Gatekeeper policies
-for allowed registries, required resources and non-root containers. Payments are idempotent with a
-double-entry ledger in integer minor units. k6 load testing found three real bugs, including
-synchronous bcrypt blocking the event loop. Runs locally on Docker Compose and minikube — not
-deployed to a cloud cluster, and the payment and email/SMS providers are simulated behind clean
-interfaces so the stack works offline.
-
-`TypeScript` `Express 5` `PostgreSQL` `Redis` `RabbitMQ` `Kubernetes` `Helm` `Argo CD` `k6`
 
 ### [authcore-service](https://github.com/cypher682/authcore-service)
 
