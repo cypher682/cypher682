@@ -34,7 +34,7 @@ call.
 
 ### [nexuspay-platform](https://github.com/cypher682/nexuspay-platform)
 
-Seven TypeScript services (gateway, auth, payments, notifications,fraud,report) behind a single public
+Seven TypeScript services (gateway, auth, payments, notifications,fraud,report,feature-flag) behind a single public
 entrypoint, delivered with a Helm library chart, an Argo CD ApplicationSet and Gatekeeper policies
 for allowed registries, required resources and non-root containers. Payments are idempotent with a
 double-entry ledger in integer minor units. k6 load testing found three real bugs, including
